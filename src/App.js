@@ -3,10 +3,10 @@ import "./App.css";
 
 
 import {
-    spiralOne, spiralTwo
+    spiralOne, spiralTwo, rotatingBall
 } from "./art";
 
-const artFunctions = [spiralOne, spiralTwo];
+const artFunctions = [spiralOne, spiralTwo, rotatingBall];
 const artFunctionsNames = artFunctions.map(func => func.name);
 
 const App = () => {
@@ -22,10 +22,10 @@ const App = () => {
     useEffect(() => {
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
-        let i = 4.5;
+        let i = 0;
         const intervalId = setInterval(() => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            i += 0.00001;
+            i += 1;
             artFunctions[currentFunctionID](canvas, i);      
         }, 10);
         return(() => clearInterval(intervalId));
