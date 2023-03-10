@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Canvas-Art-Gallery/static/css/main.201d08ac.chunk.css",
-    "main.js": "/Canvas-Art-Gallery/static/js/main.3d0c0cdd.chunk.js",
-    "main.js.map": "/Canvas-Art-Gallery/static/js/main.3d0c0cdd.chunk.js.map",
+    "main.js": "/Canvas-Art-Gallery/static/js/main.b96cc50d.chunk.js",
+    "main.js.map": "/Canvas-Art-Gallery/static/js/main.b96cc50d.chunk.js.map",
     "runtime-main.js": "/Canvas-Art-Gallery/static/js/runtime-main.3460d73a.js",
     "runtime-main.js.map": "/Canvas-Art-Gallery/static/js/runtime-main.3460d73a.js.map",
     "static/js/2.6068766d.chunk.js": "/Canvas-Art-Gallery/static/js/2.6068766d.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.3460d73a.js",
     "static/js/2.6068766d.chunk.js",
     "static/css/main.201d08ac.chunk.css",
-    "static/js/main.3d0c0cdd.chunk.js"
+    "static/js/main.b96cc50d.chunk.js"
   ]
 }
