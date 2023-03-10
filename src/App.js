@@ -34,11 +34,11 @@ const App = () => {
         <div className="app">
             <h3>{artFunctions[currentFunctionID].name}</h3>
             <div className="display">
-                <button onClick={()=>navButtonClicked(-1)}>Previous</button>
+                <button className="nav-btn" onClick={()=>navButtonClicked(-1)}>Previous</button>
                 <canvas id="canvas" width="300" height="300" />
-                <button onClick={()=>navButtonClicked(1)}>Next</button>
+                <button className="nav-btn" onClick={()=>navButtonClicked(1)}>Next</button>
             </div>
-            <h3>Function #{currentFunctionID}</h3>
+            <h3>{currentFunctionID + 1} / {artFunctions.length} </h3>
         </div>
     );
 };
