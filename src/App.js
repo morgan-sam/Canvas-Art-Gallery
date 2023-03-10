@@ -12,7 +12,10 @@ const App = () => {
     const [currentFunctionID, setCurrentFunctionID] = useState(0);
 
     const navButtonClicked = (change) => {
-        setCurrentFunctionID(Math.min(artFunctions.length-1, Math.max(0,currentFunctionID + change)));
+        let newFunctionID = currentFunctionID + change;
+        newFunctionID = newFunctionID % artFunctions.length;
+        newFunctionID = newFunctionID < 0 ? artFunctions.length - 1 : newFunctionID;
+        setCurrentFunctionID(newFunctionID);
     }
 
     console.log(artFunctions[0].name);
