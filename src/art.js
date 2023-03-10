@@ -26,7 +26,7 @@ export const spiralTwo = (canvas, tick) => {
     ctx.stroke();
 }
 
-export const rotatingBall = (canvas, tick) => {
+export const rotatingString = (canvas, tick) => {
     const mod = tick / 100;
     const circleSize = 60;
     var ctx = canvas.getContext("2d");

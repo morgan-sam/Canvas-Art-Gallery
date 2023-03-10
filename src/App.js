@@ -3,10 +3,10 @@ import "./App.css";
 
 
 import {
-    spiralOne, spiralTwo, rotatingBall
+    spiralOne, spiralTwo, rotatingString
 } from "./art";
 
-const artFunctions = [spiralOne, spiralTwo, rotatingBall];
+const artFunctions = [spiralOne, spiralTwo, rotatingString];
 const artFunctionsNames = artFunctions.map(func => func.name);
 
 const App = () => {
