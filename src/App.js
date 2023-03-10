@@ -7,6 +7,7 @@ import {
 } from "./art";
 
 const artFunctions = [spiralOne, spiralTwo];
+const artFunctionsNames = artFunctions.map(func => func.name);
 
 const App = () => {
     const [currentFunctionID, setCurrentFunctionID] = useState(0);
@@ -32,7 +33,7 @@ const App = () => {
 
     return (
         <div className="app">
-            <h3>{artFunctions[currentFunctionID].name}</h3>
+            <h3>{artFunctionsNames[currentFunctionID]}</h3>
             <div className="display">
                 <button className="nav-btn" onClick={()=>navButtonClicked(-1)}>Previous</button>
                 <canvas id="canvas" width="300" height="300" />
