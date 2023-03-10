@@ -18,8 +18,6 @@ const App = () => {
         setCurrentFunctionID(newFunctionID);
     }
 
-    console.log(artFunctions[0].name);
-
     useEffect(() => {
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
