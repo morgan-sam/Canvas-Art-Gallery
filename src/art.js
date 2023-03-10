@@ -1,6 +1,6 @@
 export const spiralOne = (canvas, mod) => {
     var ctx = canvas.getContext("2d");
-    ctx.strokeStyle = "red";
+    ctx.strokeStyle = "#ccc";
     ctx.beginPath();
     for (let i = 0; i < 720; i++) {
         let angle = mod * i;
