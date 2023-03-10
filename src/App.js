@@ -1,35 +1,42 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
+
+import {
+    spiralOne, spiralTwo
+} from "./art";
+
+const artFunctions = [spiralOne, spiralTwo];
+
 const App = () => {
+    const [currentFunctionID, setCurrentFunctionID] = useState(0);
+
+    const navButtonClicked = (change) => {
+        setCurrentFunctionID(Math.min(artFunctions.length-1, Math.max(0,currentFunctionID + change)));
+    }
+
     useEffect(() => {
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
         ctx.strokeStyle = "#ccc";
         let i = 4.5;
-
-        setInterval(() => {
+        const intervalId = setInterval(() => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             i += 0.00001;
-            drawSpiral(i);
+            artFunctions[currentFunctionID](canvas, i);      
         }, 10);
+        return(() => clearInterval(intervalId));
+    }, [currentFunctionID]);
 
-        const drawSpiral = (mod) => {
-            ctx.beginPath();
-            for (let i = 0; i < 720; i++) {
-                let angle = mod * i;
-                let x = angle * Math.cos(angle) * 0.1;
-                let y = angle * Math.sin(angle) * 0.1;
-                ctx.lineTo(canvas.width / 2 + x, canvas.height / 2 + y);
-            }
-            ctx.stroke();
-        };
-    }, []);
     return (
         <div className="app">
-            <button>Previous</button>
-            <canvas id="canvas" width="300" height="300" />
-            <button>Next</button>
+            <h3>{currentFunctionID}</h3>
+            <div className="display">
+                <button onClick={()=>navButtonClicked(-1)}>Previous</button>
+                <canvas id="canvas" width="300" height="300" />
+                <button onClick={()=>navButtonClicked(1)}>Next</button>
+            </div>
+            <h3>Function #{currentFunctionID}</h3>
         </div>
     );
 };
