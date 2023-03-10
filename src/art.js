@@ -36,3 +36,17 @@ export const rotatingString = (canvas, tick) => {
     ctx.arc(canvas.width / 2, canvas.height / 2, circleSize, start, end);
     ctx.stroke();
 }
+
+export const worm = (canvas, tick) => {
+    var ctx = canvas.getContext("2d");
+    ctx.strokeStyle = "pink";
+    for (let i = 0; i < 1000; i++) {
+        const mod = (tick + i) / 100;
+        const circleSize = Math.abs(Math.sin((tick + i) / 1000) * 60);
+        ctx.beginPath();
+        const start = mod * Math.PI;
+        const end = (mod + 0.5) * Math.PI;
+        ctx.arc(canvas.width / 2, canvas.height / 2, circleSize, start, end);
+        ctx.stroke();
+    }
+}

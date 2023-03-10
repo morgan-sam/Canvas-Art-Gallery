@@ -1,12 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, {
+    useEffect,
+    useState
+} from "react";
 import "./App.css";
 
 
 import {
-    spiralOne, spiralTwo, rotatingString
+    spiralOne,
+    spiralTwo,
+    rotatingString,
+    worm
 } from "./art";
 
-const artFunctions = [spiralOne, spiralTwo, rotatingString];
+const artFunctions = [spiralOne, spiralTwo, rotatingString, worm];
 const artFunctionsNames = artFunctions.map(func => func.name);
 
 const App = () => {
@@ -26,21 +32,38 @@ const App = () => {
         const intervalId = setInterval(() => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             i += 1;
-            artFunctions[currentFunctionID](canvas, i);      
+            artFunctions[currentFunctionID](canvas, i);
         }, 10);
-        return(() => clearInterval(intervalId));
+        return (() => clearInterval(intervalId));
     }, [currentFunctionID]);
 
-    return (
-        <div className="app">
-            <h3>{artFunctionsNames[currentFunctionID]}</h3>
-            <div className="display">
-                <button className="nav-btn" onClick={()=>navButtonClicked(-1)}>Previous</button>
-                <canvas id="canvas" width="300" height="300" />
-                <button className="nav-btn" onClick={()=>navButtonClicked(1)}>Next</button>
-            </div>
-            <h3>{currentFunctionID + 1} / {artFunctions.length} </h3>
-        </div>
+    return ( <
+        div className = "app" >
+        <
+        h3 > {
+            artFunctionsNames[currentFunctionID]
+        } < /h3> <
+        div className = "display" >
+        <
+        button className = "nav-btn"
+        onClick = {
+            () => navButtonClicked(-1)
+        } > Previous < /button> <
+        canvas id = "canvas"
+        width = "300"
+        height = "300" / >
+        <
+        button className = "nav-btn"
+        onClick = {
+            () => navButtonClicked(1)
+        } > Next < /button> <
+        /div> <
+        h3 > {
+            currentFunctionID + 1
+        }
+        / {artFunctions.length} </h3 >
+        <
+        /div>
     );
 };
 
