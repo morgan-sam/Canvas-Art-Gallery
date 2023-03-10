@@ -15,6 +15,8 @@ const App = () => {
         setCurrentFunctionID(Math.min(artFunctions.length-1, Math.max(0,currentFunctionID + change)));
     }
 
+    console.log(artFunctions[0].name);
+
     useEffect(() => {
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
@@ -30,7 +32,7 @@ const App = () => {
 
     return (
         <div className="app">
-            <h3>{currentFunctionID}</h3>
+            <h3>{artFunctions[currentFunctionID].name}</h3>
             <div className="display">
                 <button onClick={()=>navButtonClicked(-1)}>Previous</button>
                 <canvas id="canvas" width="300" height="300" />
